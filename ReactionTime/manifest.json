@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Reaction Time Bot",
+  "version": "5.0",
+  "description": "Bot per il test di tempo di reazione su Human Benchmark",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://humanbenchmark.com/*"
+  ],
+  "action": {
+    "default_title": "Avvia Reaction Time Bot"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://humanbenchmark.com/tests/reactiontime*"],
+      "js": ["content.js"]
+    }
+  ]
+}
